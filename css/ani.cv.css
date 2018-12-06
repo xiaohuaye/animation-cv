@@ -1,0 +1,18 @@
+*{
+  transition: all 1s;
+  padding:0;
+  margin:0;
+}
+.token.selector, {
+  color: black;
+}
+.token.constant, {
+  color: black;
+}
+.token.punctuation {
+  color: black;
+}
+body{
+  perspective: 500px;
+  padding-left: 100px;
+}
