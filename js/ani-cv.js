@@ -25,29 +25,51 @@ body{
 }
 
 /* 来点立体感 */
-@keyframes dd {
-  0%{ width: 100%;}
-  100%{ width: 45%;}
-}
+
 #displayCode {
-  animation-duration: 3s;
-  animation-name: dd;
   transform: rotatey(6deg);
-  width: 45%;
+  animation-name: dd;
+  animation-duration: 1s;
+  width: 30%;
 }
+/*现在介绍一下我自己*/
+/*来张白纸吧*/
+
+.paper{
+  display: block;
+  transform: rotatey(360deg);
+}
+
+/*我要开始写简历了，请看右边*/
 `
 var n = 0
 var timer = setInterval(()=>{
   n++
   var code = result.slice(0,n)
   var html = Prism.highlight(code, Prism.languages.css, 'css')
-  console.log(html)
   $('#displayCode>.language-css').html(html) 
   $('#displayCss').html(result.slice(0,n))
+  $('#displayCode').scrollTop(displayCode.scrollHeight)
   if(n>=result.length){
     window.clearInterval(timer)
+    writePaper()
   }
-},50)
+},10)
+
+function writePaper(){
+  let cv = `
+  你好
+  `
+  let n = 0
+  let timer1 = setInterval(()=>{
+    n++
+    let result = cv.slice(0,n)
+    $('#paper>#cv').html(result)
+    if(n>=cv.length){
+      window.clearInterval(timer1)
+    }
+  },10)
+}
 
 
 
