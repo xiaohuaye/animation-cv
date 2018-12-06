@@ -54,7 +54,7 @@ var timer = setInterval(()=>{
     window.clearInterval(timer)
     writePaper()
   }
-},10)
+},60)
 
 function writePaper(){
   let cv = `
@@ -68,7 +68,7 @@ function writePaper(){
     if(n>=cv.length){
       window.clearInterval(timer1)
     }
-  },10)
+  },60)
 }
 
 
