@@ -11,7 +11,6 @@ setTimeout(function self(){
     setTimeout(self,duration)
   }else{
     let lastResult = result.slice(0,n)
-    writePaper()
     writeCat(lastResult)
   }
 },duration)
@@ -20,7 +19,8 @@ $('.button').on('click','button',speed)
 
 function writePaper(){
   let cv = `
-  你好
+    谢谢观看
+    可以点击下面的链接查看我的简历
   `
   let n = 0
   let timer1 = setInterval(()=>{
@@ -29,6 +29,7 @@ function writePaper(){
     $('#paper>#cv').html(result)
     if(n>=cv.length){
       window.clearInterval(timer1)
+      $('.endcv').css('display','inline-block')
     }
   },60)
 }
@@ -59,11 +60,14 @@ function writeCat(lastResult){
     let code = lastResult + result1.slice(0,n)
     let html = Prism.highlight(code, Prism.languages.css, 'css')
     $('#displayCode>.language-css').html(html) 
-    $('#displayCss').html(lastResult + result3.slice(0,5*n))
+    let x = 6 - parseInt(duration/20)
+    x === 6 ? x = 5 : x
+    $('#displayCss').html(lastResult + result3.slice(0,x*n))
     $('#displayCode').scrollTop(displayCode.scrollHeight)
     if(n<result1.length){
       setTimeout(self1,duration)
     }else{
+      $('#drowCat').css('display','none')
       writePaper()
     }
   },duration)
@@ -71,9 +75,9 @@ function writeCat(lastResult){
 
 var result = `
 /*面试官你好，我是张露
-这是一篇会动的简历
+今天我请来了猫咪老师
 
-只有文字好像有点单调
+现在只有文字好像有点单调
 加点代码进去吧
 
 先来改改样式吧*/
@@ -103,7 +107,7 @@ body{
   animation-duration: 1s;
   width: 30%;
 }
-/*有点无聊，画个猫咪老师吧*/
+/*猫咪老师来了*/
 /*来张白纸吧*/
 
 .paper{
@@ -115,12 +119,10 @@ body{
 
 var result1 =`
 /*开始画了，请看右边*/
-/**/
 
+/*先来张大脸*/
 .face{
   border: 2px solid black;
-  width: 60vw;
-  height: 50vw;
   border-radius: 20vw/30vw;
   position: absolute;
   top:50%;
@@ -129,16 +131,8 @@ var result1 =`
   background:white;
 }
 
-.mouse{
-  width: 8vw;
-  height: 14vw;
-  position: absolute;
-  left:51%;
-  top:72.5%;
-  transform:translateX(-50%);
-  overflow: hidden;
-}
 
+/*头上的花纹*/
 .color{
   width:30vw;
   height:25vw;
@@ -148,10 +142,9 @@ var result1 =`
   border-radius: 0 0 50% 50%;
 }
 
+/*左眼睛*/
 .eye-left{
   border: 2px solid black;
-  height: 14vw;
-  width: 12vw;
   position: absolute;
   bottom: 20%;
   left: 10%;
@@ -163,6 +156,7 @@ var result1 =`
   overflow:hidden;
 }
 
+/*右眼睛*/
 .eye-right{
   border: 2px solid black;
   height: 14vw;
@@ -178,6 +172,7 @@ var result1 =`
   overflow: hidden;
 }
 
+/*大鼻子*/
 .nose{
   width: 8vw;
   height: 3vw;
@@ -188,9 +183,17 @@ var result1 =`
   overflow: hidden;
 }
 
+/*嘴巴不能少*/
+.mouse{
+  position: absolute;
+  left:51%;
+  top:72.5%;
+  transform:translateX(-50%);
+  overflow: hidden;
+}
+
+/*左嘴唇*/
 .left-lip{
-  width: 8vw;
-  height: 8vw;
   position: absolute;
   left:50%;
   top:66.5%;
@@ -198,15 +201,15 @@ var result1 =`
   overflow: hidden;
 }
 
+/*右嘴唇*/
 .right-lip{
-  width: 8vw;
-  height: 8vw;
   position: absolute;
   left:50%;
   top:66.5%;
   overflow: hidden;
 }
 
+/*左耳朵*/
 .left-ear{
   position: absolute;
   left: -4%;
@@ -216,6 +219,7 @@ var result1 =`
   overflow: hidden;
 }
 
+/*右耳朵*/
 .right-ear{
   position: absolute;
   right: -4%;
@@ -225,9 +229,8 @@ var result1 =`
   overflow: hidden;
 }
 
+/*花纹快加上*/
 .spot{
-  width: 5vw;
-  height: 5vw;
   position:absolute;
   top:20vw;
   left: 1vw;
@@ -237,6 +240,8 @@ var result1 =`
   transform: rotateZ(-84deg);
   z-index: -3;
 }
+
+/*猫咪老师画好了*/
 `
 
 var result2 = `
