@@ -8,10 +8,10 @@
   display: block;
   clear: both;
 }
-.token.selector, {
+.token.selector{
   color: black;
 }
-.token.constant, {
+.token.constant{
   color: black;
 }
 .token.punctuation {
@@ -45,4 +45,17 @@ body{
 .paper{
   margin-top:8px;
   transform: rotatey(68.5deg);
+}
+.button{
+  position: absolute;
+  left: 0;
+  top:0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  align-items: center;
+  margin: 5px 0 0 5px;
+}
+.button button{
+  margin:5px;
 }

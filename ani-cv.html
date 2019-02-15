@@ -11,10 +11,18 @@
   <style id="displayCss"></style>
 </head>
 <body class="clearfix">
+    <div class="button">
+        <span>当前速度</span>
+        <span id="displaySpeed">60</span>
+        <button data-speed="1">加快</button>
+        <button data-speed="-1">变慢</button>
+        <button data-speed="0">跳过</button>
+      </div>
   <pre id="displayCode">
     <code class="language-css"></code>
   </pre>
   <div id="paper" class="paper">
+    <div id="drowCat"></div>
     <pre id="cv"></pre>
   </div>
 </body>

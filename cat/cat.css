@@ -428,7 +428,7 @@
   border-radius: 50%;
   background:red;
   transform: rotateZ(-264deg);
-  z-index: ;
+  /* z-index: ; */
 }
 .spot6:before{
   content: '';
@@ -452,7 +452,7 @@
   border-radius: 50%;
   background:red;
   transform: rotateZ(-264deg);
-  z-index: ;
+  /* z-index: ; */
 }
 .spot7:before{
   content: '';
@@ -477,7 +477,7 @@
   border-radius: 50%;
   background:red;
   transform: rotate(-274deg);
-  z-index: ;
+  /* z-index: ; */
 }
 .spot8:before{
   content: '';
@@ -501,7 +501,7 @@
   border-radius: 50%;
   background:red;
   transform: rotateZ(-274deg);
-  z-index: ;
+  /* z-index: ; */
 }
 .spot9:before{
   content: '';
